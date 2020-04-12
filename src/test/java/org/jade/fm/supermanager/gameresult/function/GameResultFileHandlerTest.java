@@ -46,16 +46,10 @@ public class GameResultFileHandlerTest extends GameResultFileHandler {
 	public void testGameResultFileHandler() {
 		S3Event s3Event = null;
 		Context context = null;
+		GameResultFileProcessor processor = null;
 		
-		handler = new GameResultFileHandler(s3Client);
+		handler = new GameResultFileHandler(s3Client, new Context());
 		assertNotNull(handler);
-		
-		//S3Entity s3 = new 
-		//S3EventNotificationRecord record1 = new S3EventNotificationRecord( region, "test-eventName", "s3", "1.5", "test-eventVersion",null, null, s3, user, null);
-		
-		//List<S3EventNotificationRecord> records = new List();
-		
-		//S3Event s3Event = new S3Event(records);
 		
 		handler.handleRequest(s3Event, context);
 		
